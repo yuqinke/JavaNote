@@ -1,0 +1,37 @@
+Shift+回车        :   代码自动换行
+
+Alt+/ :           :   自动补全
+
+Alt+上下箭头      :   移动代码行
+
+Alt+Ctrl+上下箭头 :   复制代码行
+
+Alt+Shift+S       :   选择构造方法
+
+Alt+Shift+A       :   块编辑
+
+Alt+Shift+J       :   方法注释
+
+Ctrl+D            :   删除代码行
+
+Ctrl+1            :   意见提示功能
+
+Ctrl+2   R        :   变量选中改名 
+
+Ctrl+Shift+F      :   代码格式化
+
+Ctrl+Shift+O      :   自动导包
+
+Ctrl+Shift+M      :   方法抽取
+
+Ctrl+Shift+X      :   小写转化大写
+
+Ctrl+Shift+Y      :   大写转化小写
+
+Ctrl+/            :   单行注释
+
+Ctrl+F            :   文件中字符串搜索或替换
+
+Ctrl+Shift+/      :   多行注释
+
+Ctrl+Shift+J      :   文档注释

@@ -1,0 +1,45 @@
+1.获取主机名和IP地址：InetAddress inet = InetAddress.getLocalHost();
+
+2.获取ip地址对象：InetAddress inet = InetAddress.getByName("www.baidu.com");
+
+
+UDP协议数据传输
+
+Send
+数据封装：DatagramPacket dp = new DatagramPacket(data, data.length, inet,6000);
+数据发送：DatagramSocket ds = new DatagramSocket();ds.send(dp);
+关闭资源：ds.close();
+
+Receive
+端口绑定：DatagramSocket ds = new DatagramSocket(6000);
+创建数据包对象：byte[] data = new byte[1024];
+                DatagramPacket dp = new DatagramPacket(data, data.length);
+数据接收：ds.receive(dp);
+数据拆包：String ip=dp.getAddress().getHostAddress();
+          int port = dp.getPort();
+          int length = dp.getLength();
+关闭资源：ds.close();
+
+
+
+TCP协议数据数据传输
+
+Client
+客户端连接服务器：Socket socket = new Socket("127.0.0.1", 8000);
+客户端绑定数据源：FileInputStream fis = new FileInputStream("c:\\t.jpg");
+字符数组读取输出：while((len = fis.read(bytes))!=-1){
+		     out.write(bytes, 0, len);
+		}
+服务器终止：socket.shutdownOutput();
+接收服务器反馈数据：InputStream in = socket.getInputStream();
+关闭资源：fis.close();socket.close();
+
+Server
+套接字监听：ServerSocket server = new ServerSocket(8000);
+获取客户端套接字对象：Socket socket = server.accept();
+锁定数据目的：FileOutputStream fos = new FileOutputStream(upload+File.separator+filename);
+读取写入：while((len = in.read(bytes))!=-1){
+	     fos.write(bytes, 0, len);
+		}
+反馈客户端：socket.getOutputStream().write("上传成功".getBytes());
+关闭资源：fos.close();socket.close();server.close();

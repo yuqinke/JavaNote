@@ -1,0 +1,19 @@
+反射：对类对象解刨调用，不new
+
+Class对象3种获取方式
+1.对象方法获取：Person p = new Person();Class c = p.getClass();
+2.类名获取：Class c1 = Person.class;
+3.Class类的静态方法获取：Class c2 = Class.forName("cn.itcast.demo1.Person");
+
+构造器获取
+空参：Constructor con =  c.getConstructor();
+有参：Constructor con = c.getConstructor(String.class,int.class);
+
+无参对象获取：Object obj = con.newInstance();
+有参对象获取：Object obj = con.newInstance("张三",20);
+
+反射构造方法运行:Class c = Class.forName("cn.itcast.demo1.Person");
+                 Object obj = c.newInstance();//获取class对象
+                 Method method = c.getMethod("eat");//获取方法：可传参
+                 method.invoke(obj);//对象方法调用：可科传参
+配置文件读取：FileReader r = new FileReader("config.properties");

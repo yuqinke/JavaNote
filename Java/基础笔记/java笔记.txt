@@ -1,0 +1,25 @@
+1.构造方法是创建对象是给对象赋值
+get set是创建对象后给对象赋值
+所有的类都有默认空参构造方法 ：public Person(){}
+
+2.Ctrl+T查看类的继承关系
+
+3.静态方法不能被重写。final所修饰的方法只能被子类继承不能被子类重写
+
+4.抽象类和接口需要在重写后才可以new
+
+5.抽象类和接口不可以直接new，但是可以匿名调用 例如new Person（）{}.person;
+
+6.在子类有参构造方法中super表示调用父类有参构造方法
+
+7.Ctrl+alt+s快速生成get set或者构造方法
+
+8.Random和Scanner
+Random r = new Random();
+p1 = r.nextInt(10); //随机一个10以内的数
+
+Scanner s = new Scanner(System.in); 
+p2 = s.netxInt();//键盘输入一个数
+
+9. int[]a = {1,2,3,4,5};
+   System.out.println(Arrays.toString(a));//直接输出数组所以元素

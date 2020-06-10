@@ -1,0 +1,51 @@
+CREATE TABLE product(
+    -- 主键列，自动增长    
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    -- 商品名字，可变字符，非空    
+    pname VARCHAR(100) NOT NULL,
+    -- 商品价格，double    
+    price DOUBLE
+);
+/*
+   向数据表中添加数据 insert
+   格式:
+     insert into 表名(列名1,列名2,列名3) values (值1,值2,值3)
+     注意:
+        列名,表名问题
+        对应问题,
+         个数,数据类型
+*/
+INSERT INTO product (id,pname,price)VALUE(1,'笔记本',5555.999);
+INSERT INTO product (id,pname,price)VALUE(2,'智能手机',666.999);
+
+DESC product;
+/*
+   添加数据格式,不考虑主键
+   格式:
+     insert into 表名 (列名) values (值)
+*/
+
+INSERT INTO product(pname,price)VALUES('洗衣机',6354);
+INSERT INTO product(pname,price)VALUES('彩电',2000);
+
+/*
+   添加数据格式,所有值全给出
+   格式:
+     insert into 表名 values (全列值)
+*/
+
+INSERT INTO product VALUES(4,'微波炉',365.25);
+
+/*
+   添加数据格式,批量写入
+   格式:
+     insert into 表名 (列名1,列名2,列名3) values (值1,值2,值3),(值1,值2,值3)
+*/
+INSERT INTO product(pname,price)VALUES
+('智能机器人',25999.22),
+('彩色电视',1250.36),
+('沙发',5899.02);
+
+-- 删除
+DELETE FROM product WHERE id IN(8,9,10,11,12,13);
+

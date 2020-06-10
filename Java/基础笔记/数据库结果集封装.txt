@@ -1,0 +1,26 @@
+day30 数据表Sort
+
+1.将结果集的第一行存储到对象数组中 ArrayHandler
+Object[] result = qr.query(con, sql, new ArrayHandler());
+
+2.将结果集的每一行,封装到对象数组中, 出现很多对象数组 ArrayListHandler
+List<Object[]> result=  qr.query(con, sql, new ArrayListHandler());
+
+3.将结果集的第一行数据,封装成JavaBean对象 BeanHandler
+Sort s = qr.query(con, sql, new BeanHandler<Sort>(Sort.class));
+
+4.结果集每一行数据,封装JavaBean对象 BeanListHandler
+List<Sort> list = qr.query(con, sql, new BeanListHandler<Sort>(Sort.class));
+
+5.结果集,指定列的数据,存储到List集合 ColumnListHandler
+List<Object> list = qr.query(con, sql, new ColumnListHandler<Object>("sname"));
+
+6.对于查询后,只有1统计结果  ScalarHandler
+String sql = "SELECT COUNT(*) FROM sort";
+long count = qr.query(con, sql, new ScalarHandler<Long>());
+
+7.将结果集第一行数据,封装到Map集合中MapHandler
+Map<String,Object> map = qr.query(con, sql, new MapHandler());
+
+8. 将结果集每一行存储到Map集合,键:列名,值:数据  MapListHandle
+List<Map<String,Object>> list = qr.query(con, sql, new MapListHandler());
