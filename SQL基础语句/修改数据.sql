@@ -41,3 +41,7 @@ UPDATE product SET price = 2000 WHERE id = 1 OR id=7;
 
 
 
+
+
+
+
